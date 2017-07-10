@@ -44,6 +44,18 @@ describe('calculator', function () {
     assert.equal(25, calculator.runningTotal)
   })
 
+  it('it can deal with very large numbers', function() {
+    calculator.previousTotal = 9999999
+    calculator.multiply(9999999)
+    assert.equal(99999980000001, calculator.runningTotal)
+  })
+
+  it('multiply negative numbers makes positive', function() {
+    calculator.previousTotal = -2
+    calculator.multiply(-2)
+    assert.equal(4, calculator.runningTotal)
+  })
+
   it('it has a divide function', function() {
     calculator.previousTotal = 5;
     calculator.divide(5)
