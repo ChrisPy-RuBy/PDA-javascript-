@@ -77,6 +77,7 @@ Calculator.prototype = {
     // record what the previous operator was
     if (operator == '=') {
       this.previousOperator = null;
+      console.log("equals pressed", this.runningTotal)
     } else {
       this.previousOperator = operator;
     }
